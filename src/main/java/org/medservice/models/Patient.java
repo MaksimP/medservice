@@ -10,9 +10,9 @@ public class Patient {
 
     @Id
     private Long id;
-    private String lastNameDoctor;
-    private String namePatient;
-    private String lastNamePatient;
+   // private String lastNameDoctor;
+    private String name;
+    private String lastName;
     private String fileName;
     private long length;
 }

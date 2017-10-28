@@ -6,6 +6,8 @@ import org.medservice.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PatientServiceImpl implements PatientService {
 
@@ -20,5 +22,10 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public Patient findByLastName(String lastName) {
         return patientRepository.findPatientByLastName(lastName);
+    }
+
+    @Override
+    public List<Patient> find() {
+        return patientRepository.findAll();
     }
 }
