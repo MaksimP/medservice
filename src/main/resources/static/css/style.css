@@ -3,8 +3,28 @@
 }
 
 .text_field label {
+    margin-left: 30px;
     display: block;
     float: left;
-    width: 70px;
+    width: 80px;
     height: 15px;
+}
+
+.change_data_button {
+    margin: 20px;
+}
+
+.href_admin {
+    margin-left: 30px;
+    display: block;
+}
+
+.title_admin_panel {
+    width: 100%;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.change_data_doctor {
+    margin-left: 30px;
 }

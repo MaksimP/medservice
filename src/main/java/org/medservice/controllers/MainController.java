@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -29,6 +30,21 @@ public class MainController {
     @GetMapping("/department")
     public String department(Model model) {
         return "department";
+    }
+
+    @PostMapping("/add_doctor")
+    public String addDoctor(Model model) {
+        return "add_doctor";
+    }
+
+    @GetMapping("/doctors_table")
+    public String getDoctors(Model model) {
+        return "doctors_table";
+    }
+
+    @GetMapping("/patients_table")
+    public String getPatients(Model model) {
+        return "patients_table";
     }
 }
 
