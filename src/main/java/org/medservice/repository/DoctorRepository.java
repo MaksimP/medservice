@@ -4,10 +4,13 @@ import org.medservice.models.Doctor;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository("doctorRepository")
+import java.util.List;
+
+@Repository()
 public interface DoctorRepository extends MongoRepository<Doctor, Long>{
 
-    Doctor findDoctorByLastName(String lastname);
+    Doctor findDoctorByLastName(String lastName);
 
     Doctor findDoctorByUserName(String username);
+
 }

@@ -1,7 +1,10 @@
 package org.medservice.controllers;
 
 
+import org.medservice.models.Doctor;
+import org.medservice.repository.DoctorRepository;
 import org.medservice.repository.PatientRepository;
+import org.medservice.services.DoctorServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainController {
 
     @Autowired
-    PatientRepository patientRepository;
+    private DoctorServiceImpl doctorService;
+
+    @Autowired
+    private PatientRepository patientRepository;
 
     @GetMapping("/admin")
     public String admin(Model model) {
@@ -32,8 +38,14 @@ public class MainController {
         return "department";
     }
 
-    @PostMapping("/add_doctor")
+    @GetMapping("/add_doctor")
     public String addDoctor(Model model) {
+        return "add_doctor";
+    }
+
+    @PostMapping("/add_doctor")
+    public String addDoctor(Doctor doctor) {
+        doctorService.saveDoctor(doctor);
         return "add_doctor";
     }
 

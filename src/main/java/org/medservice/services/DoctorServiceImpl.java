@@ -2,18 +2,27 @@ package org.medservice.services;
 
 import org.medservice.models.Doctor;
 import org.medservice.repository.DoctorRepository;
+import org.medservice.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class DoctorServiceImpl implements DoctorService {
+
+    private static final String role = "USER";
 
     @Autowired
     private DoctorRepository doctorRepository;
 
     @Autowired
-    private BCryptPasswordEncoder encoder;
+    private RoleRepository roleRepository;
+
+    /*@Autowired
+    private BCryptPasswordEncoder encoder;*/
 
     @Override
     public Doctor findDoctorByUserName(String userName) {
@@ -21,7 +30,18 @@ public class DoctorServiceImpl implements DoctorService {
     }
 
     @Override
+    public Doctor findDoctorByLastName(String lastName) {
+        return doctorRepository.findDoctorByLastName(lastName);
+    }
+
+    /*public List<Doctor> findAllDoctor() {
+        return doctorRepository.findAll(Example<Doctor)
+    }*/
+
+    @Override
     public void saveDoctor(Doctor doctor) {
-        doctor.setPassword(encoder.encode(doctor.getPassword()));
+        doctor.setRole(role);
+        doctorRepository.save(doctor);
+        //doctor.setPassword(encoder.encode(doctor.getPassword()));
     }
 }

@@ -8,5 +8,7 @@ public interface  DoctorService {
 
     Doctor findDoctorByUserName(String userName);
 
+    Doctor findDoctorByLastName(String lastName);
+
     void saveDoctor(Doctor doctor);
 }
