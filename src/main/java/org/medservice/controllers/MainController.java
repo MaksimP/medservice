@@ -19,8 +19,6 @@ public class MainController {
     @Autowired
     private DoctorServiceImpl doctorService;
 
-    @Autowired
-    private PatientRepository patientRepository;
 
     @GetMapping("/admin")
     public String admin(Model model) {
@@ -29,7 +27,12 @@ public class MainController {
     }
 
     @GetMapping("/")
-    public String login(Model model) {
+    public String home(Model model) {
+        return "redirect:login";
+    }
+
+    @GetMapping("/login")
+    public String login(Model model, String error, String logout) {
         return "login";
     }
 
