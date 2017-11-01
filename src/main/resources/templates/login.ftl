@@ -14,6 +14,7 @@
             <label for="login_password">Пароль</label>
             <input id="login_password" type="password" name="password" required>
             <button id="login_button" type="submit">Войти</button>
+           <!-- <input type="hidden" name="{_csrf.parameterName}" value="{$_csrf.token}" /> -->
         </fieldset>
     </form>
 </div>

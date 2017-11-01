@@ -1,6 +1,5 @@
 package org.medservice.services;
 
-
 import org.medservice.models.Doctor;
 import org.medservice.repository.DoctorRepository;
 import org.springframework.beans.factory.annotation.Autowired;

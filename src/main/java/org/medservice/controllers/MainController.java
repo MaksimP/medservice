@@ -22,19 +22,23 @@ public class MainController {
 
     @GetMapping("/admin")
     public String admin(Model model) {
-        
         return "admin";
     }
 
     @GetMapping("/")
     public String home(Model model) {
-        return "redirect:login";
+        return "welcome";
     }
 
     @GetMapping("/login")
     public String login(Model model, String error, String logout) {
         return "login";
     }
+
+    /*@PostMapping("/login")
+    public String login() {
+        return "redirect:add_doctor";
+    }*/
 
     @GetMapping("/department")
     public String department(Model model) {
