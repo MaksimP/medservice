@@ -22,7 +22,7 @@ public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
        Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
         authorities.forEach(authority -> {
-            if (authority.getAuthority().equals("admin")) {
+            if (authority.getAuthority().equals("ADMIN")) {
                 try {
                     redirectStrategy.sendRedirect(httpServletRequest, httpServletResponse, "/admin");
                 } catch (IOException e) {
