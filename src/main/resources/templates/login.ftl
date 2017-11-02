@@ -7,6 +7,12 @@
 </head>
 <body>
 <div class="container">
+    <#if logout>
+
+    </#if>
+    <#if error>
+        
+    </#if>
     <form method="post" action="/login" class="form_login">
         <fieldset>
             <label for="login">Логин</label>
