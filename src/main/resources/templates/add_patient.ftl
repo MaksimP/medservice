@@ -13,7 +13,7 @@
         </form>
     </div>
     <div class="row" style="margin-top: 20px">
-        <form class="form-horizontal" action="">
+        <form class="form-horizontal" action="/add_patient" method="post">
             <div class="form-group">
                 <label for="namePatient" class="col-md-2 control-label">Имя пациента</label>
                 <div class="col-md-3">

@@ -2,6 +2,7 @@ package org.medservice.controllers;
 
 
 import org.medservice.models.Doctor;
+import org.medservice.models.Patient;
 import org.medservice.repository.DoctorRepository;
 import org.medservice.repository.PatientRepository;
 import org.medservice.services.DoctorServiceImpl;
@@ -69,6 +70,13 @@ public class MainController {
     @GetMapping("/add_patient")
     public String addPatients(Model model) {
         return "add_patient";
+    }
+
+    @PostMapping("/add_patient")
+    public String addPatients(Patient patient, Model model) {
+        patientService.save(patient);
+        model.addAttribute("patients", patientService.findAll());
+        return "patients_table";
     }
 }
 
