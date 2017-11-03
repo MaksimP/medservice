@@ -12,5 +12,5 @@ public interface PatientService {
 
     Patient findByLastName(String lastName);
 
-    List<Patient> find();
+    List<Patient> findAll();
 }

@@ -4,6 +4,7 @@ package org.medservice.services;
 import org.medservice.models.Patient;
 import org.medservice.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,7 +26,7 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public List<Patient> find() {
+    public List<Patient> findAll() {
         return patientRepository.findAll();
     }
 }

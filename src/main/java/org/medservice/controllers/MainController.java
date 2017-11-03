@@ -5,6 +5,7 @@ import org.medservice.models.Doctor;
 import org.medservice.repository.DoctorRepository;
 import org.medservice.repository.PatientRepository;
 import org.medservice.services.DoctorServiceImpl;
+import org.medservice.services.PatientServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +20,9 @@ public class MainController {
 
     @Autowired
     private DoctorServiceImpl doctorService;
+
+    @Autowired
+    private PatientServiceImpl patientService;
 
 
     @GetMapping("/admin")
@@ -68,6 +72,7 @@ public class MainController {
 
     @GetMapping("/patients_table")
     public String getPatients(Model model) {
+        model.addAttribute("patients", patientService.findAll());
         return "patients_table";
     }
 }

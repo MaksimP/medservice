@@ -9,10 +9,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Patient {
 
     @Id
-    private Long id;
+    private String id;
    // private String lastNameDoctor;
     private String name;
     private String lastName;
+    private String patronymic;
     private String fileName;
     private long length;
 }
