@@ -18,7 +18,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="change_data_doctor">
-                        <h3>Редактирование базы пользователей</h3>
+                        <h3 class="h3">Редактирование базы пользователей</h3>
                         <a class="href_admin" href="/add_doctor">Добавить пользователя</a></br>
                         <a class="href_admin" href="/doctors_table">Редактировать существующего</a><br><br>
                         <a class="href_admin" href="/patients_table">Редактирование базы пациентов</a>

@@ -12,7 +12,7 @@
 <div class="container-fluid">
     <div class="row" style="background-color: darkgray">
         <form class="navbar-form navbar-right" style="margin-right: 20px" role="button" action="/logout">
-            <button type="button" class="btn btn-default">Выйти</button>
+            <button type="submit" class="btn btn-default">Выйти</button>
         </form>
     </div>
     <div class="row">

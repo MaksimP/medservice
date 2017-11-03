@@ -2,38 +2,56 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Редактирование базы докторов</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Редактирование базы пользователей</title>
+    <link rel="stylesheet" href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" media="screen">
 </head>
 <body>
     <div class="container">
-        <form action="/add_doctor" method="post">
-            <div class="text_field">
-                <label for="username_doctor">Логин</label>
-                <input id="username_doctor" type="text" name="userName" value=""/></br>
-            </div>
+        <div class="row" style="background-color: darkgray">
+            <form class="navbar-form navbar-right" style="margin-right: 20px" role="button" action="/logout">
+                <button type="submit" class="btn btn-default">Выйти</button>
+            </form>
+        </div>
+        <div class="row" style="margin-top: 20px">
+            <form class="form-horizontal" action="/add_doctor" method="post">
+                <div class="form-group">
+                    <label for="username" class="col-md-2 control-label">Логин</label>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="userName" name="userName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-md-2 control-label">Пароль</label>
+                    <div class="col-md-3">
+                        <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="nameDoctor" class="col-md-2 control-label">Имя</label>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="nameDoctor" name="name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="lastNameDoctor" class="col-md-2 control-label">Фамилия</label>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="lastNameDoctor" name="lastName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="patronymicDoctor" class="col-md-2 control-label">Отчество</label>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="patronymicDoctor" name="patronymic">
+                    </div>
+                </div>
 
-            <div class="text_field">
-                <label for="password_doctor">Пароль</label>
-                <input id="password_doctor" type="password" name="password"/></br>
-            </div>
-
-            <div class="text_field">
-                <label for="name_doctor">Имя</label>
-                <input id="name_doctor" type="text" name="name"/></br>
-            </div>
-            <div class="text_field">
-                <label for="last_name_doctor">Фамилия</label>
-                <input id="last_name_doctor" type="text" name="lastName"/></br>
-            </div>
-            <div class="text_field">
-                <label for="patronymic_doctor">Отчество</label>
-                <input id="patronymic_doctor" type="text" name="patronymic"/></br>
-            </div>
-            <div class="change_data_button">
-                <button id="change_data" type="submit" name="change_data">Изменить данные</button>
-            </div>
-        </form>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <button type="submit" class="btn btn-default">Добавить</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 
 </body>

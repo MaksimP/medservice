@@ -30,11 +30,6 @@ public class MainController {
         return "admin";
     }
 
-    @GetMapping("/")
-    public String home(Model model) {
-        return "welcome";
-    }
-
     @GetMapping("/login")
     public String login(@RequestParam(value = "error", required = false) String error,
                         @RequestParam(value = "logout", required = false) String logout,
@@ -43,11 +38,6 @@ public class MainController {
         model.addAttribute("logout", logout != null);
         return "login";
     }
-
-    /*@PostMapping("/login")
-    public String login() {
-        return "redirect:add_doctor";
-    }*/
 
     @GetMapping("/department")
     public String department(Model model) {
@@ -74,6 +64,11 @@ public class MainController {
     public String getPatients(Model model) {
         model.addAttribute("patients", patientService.findAll());
         return "patients_table";
+    }
+
+    @GetMapping("/add_patient")
+    public String addPatients(Model model) {
+        return "add_patient";
     }
 }
 
