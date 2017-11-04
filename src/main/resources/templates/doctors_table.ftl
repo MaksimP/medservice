@@ -3,8 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Список докторов</title>
+    <link rel="stylesheet" href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" media="screen">
 </head>
 <body>
+<div class="container">
+    <div class="row" style="background-color: darkgray">
+        <form class="navbar-form navbar-right" style="margin-right: 20px" role="button" action="/logout">
+            <button type="submit" class="btn btn-default">Выйти</button>
+        </form>
+    </div>
+    <div class="row">
+        <form class="form-inline" style="margin: 10px" role="button" action="/add_doctor">
+            <button type="submit" class="btn btn-default">Добавить пользователя</button>
+        </form>
+    </div>
+    <table class="table table-bordered table-condensed">
+        <tr>
+            <th>№</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Отчество</th>
+        </tr>
+    <#list doctors as doctor>
+        <tr>
+            <td>${doctor.id}</td>
+            <td>${doctor.name}</td>
+            <td>${doctor.lastName}</td>
+            <td>${doctor.patronymic}</td>
+        </tr>
+    </#list>
+    </table>
+</div>
 
 </body>
 </html>

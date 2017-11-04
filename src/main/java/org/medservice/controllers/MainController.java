@@ -45,6 +45,12 @@ public class MainController {
         return "department";
     }
 
+    @GetMapping("/doctors_table")
+    public String getDoctors(Model model) {
+        model.addAttribute("doctors", doctorService.findAll());
+        return "doctors_table";
+    }
+
     @GetMapping("/add_doctor")
     public String addDoctor(Model model) {
         return "add_doctor";
@@ -53,14 +59,8 @@ public class MainController {
     @PostMapping("/add_doctor")
     public String addDoctor(Doctor doctor) {
         doctorService.saveDoctor(doctor);
-        return "add_doctor";
+        return "redirect:doctors_table";
     }
-
-    @GetMapping("/doctors_table")
-    public String getDoctors(Model model) {
-        return "doctors_table";
-    }
-
     @GetMapping("/patients_table")
     public String getPatients(Model model) {
         model.addAttribute("patients", patientService.findAll());
@@ -73,10 +73,9 @@ public class MainController {
     }
 
     @PostMapping("/add_patient")
-    public String addPatients(Patient patient, Model model) {
+    public String addPatients(Patient patient) {
         patientService.save(patient);
-        model.addAttribute("patients", patientService.findAll());
-        return "patients_table";
+        return "redirect:patients_table";
     }
 }
 

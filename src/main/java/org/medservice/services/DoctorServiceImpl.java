@@ -7,6 +7,8 @@ import org.medservice.repository.SequenceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DoctorServiceImpl implements DoctorService {
 
@@ -36,9 +38,16 @@ public class DoctorServiceImpl implements DoctorService {
         return doctorRepository.findDoctorByLastName(lastName);
     }
 
+    @Override
+    public List<Doctor> findAll() {
+        return doctorRepository.findAll();
+    }
+
     /*public List<Doctor> findAllDoctor() {
         return doctorRepository.findAll(Example<Doctor)
     }*/
+
+
 
     @Override
     public void saveDoctor(Doctor doctor) {
