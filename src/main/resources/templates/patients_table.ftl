@@ -22,12 +22,14 @@
     </div>
     <table class="table table-bordered table-condensed">
         <tr>
+            <th>№</th>
             <th>Имя</th>
             <th>Фамилия</th>
             <th>Отчество</th>
         </tr>
         <#list patients as patient>
             <tr>
+                <td>${patient.id}</td>
                 <td>${patient.name}</td>
                 <td>${patient.lastName}</td>
                 <td>${patient.patronymic}</td>

@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
 
-@Repository("sequenceRepository")
+@Repository()
 public class SequenceRepositoryImpl {
 
     @Autowired

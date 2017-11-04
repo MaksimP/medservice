@@ -13,7 +13,7 @@ import java.util.Set;
 public class Doctor {
 
     @Id
-    private String id;
+    private Long id;
    // @Indexed(unique = true)
     private String userName;
     private String password;

@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Patient {
 
     @Id
-    private String id;
+    private Long id;
    // private String lastNameDoctor;
     private String name;
     private String lastName;
