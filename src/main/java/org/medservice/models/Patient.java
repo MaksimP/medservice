@@ -15,5 +15,6 @@ public class Patient {
     private String lastName;
     private String patronymic;
     private String fileName;
+    private String history;
     private long length;
 }
