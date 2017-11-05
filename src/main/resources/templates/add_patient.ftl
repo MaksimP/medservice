@@ -15,6 +15,7 @@
     </div>
     <div class="row" style="margin-top: 20px">
         <form class="form-horizontal" enctype="multipart/form-data" action="/add_patient" method="post">
+            <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden">
             <div class="form-group">
                 <label for="namePatient" class="col-md-2 control-label">Имя пациента</label>
                 <div class="col-md-3">
@@ -41,7 +42,7 @@
             </div>
             <div class="form-group">
                 <label for="imageRoentgen" class="col-md-2 control-label">Снимок</label>
-                <input type="file" id="imageRoentgen" name="imageRoentgen">
+                <input type="file" id="imageRoentgen" name="imageRoentgen"/>
             </div>
 
             <div class="form-group">

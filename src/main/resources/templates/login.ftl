@@ -19,6 +19,7 @@
                     <div class="alert alert-danger" role="alert">Неверный логин или пароль</div>
                 </#if>
                     <form class="form-horizontal" method="post" action="/login">
+                        <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden">
                         <div class="form-group">
                             <label for="username" class="col-sm-2 control-label">Логин</label>
                             <div class="col-sm-10">

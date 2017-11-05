@@ -14,6 +14,7 @@
         </div>
         <div class="row" style="margin-top: 20px">
             <form class="form-horizontal" action="/add_doctor" method="post">
+                <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden">
                 <div class="form-group">
                     <label for="username" class="col-md-2 control-label">Логин</label>
                     <div class="col-md-3">
