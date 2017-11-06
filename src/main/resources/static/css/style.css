@@ -34,3 +34,13 @@
     width: 90%;
     margin-top: 15px;
 }
+
+.table-patient {
+    margin-left: 14px;
+    width: 98%;
+}
+
+.patient-field {
+    text-decoration: underline;
+    font-weight: bold;
+}

@@ -9,4 +9,6 @@ public interface PatientRepository extends MongoRepository<Patient, Long> {
 
     Patient findPatientByLastName(String lastName);
 
+    Patient findPatientById(Long id);
+
 }

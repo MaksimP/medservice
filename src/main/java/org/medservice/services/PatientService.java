@@ -12,5 +12,7 @@ public interface PatientService {
 
     Patient findByLastName(String lastName);
 
+    Patient findById(Long id);
+
     List<Patient> findAll();
 }

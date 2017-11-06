@@ -33,6 +33,12 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
+    public Patient findById(Long id) {
+        return patientRepository.findPatientById(id);
+    }
+
+
+    @Override
     public List<Patient> findAll() {
         return patientRepository.findAll();
     }

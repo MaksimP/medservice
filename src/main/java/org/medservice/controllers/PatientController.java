@@ -6,11 +6,9 @@ import org.medservice.services.PatientServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.security.Principal;
 
@@ -42,5 +40,13 @@ public class PatientController {
         fileImageService.saveFile(file);
         patientService.save(patient);
         return "redirect:patients_table";
+    }
+
+    @GetMapping("/patient_info/{id}")
+    public String getPatient(@PathVariable("id") String patientId, Model model) {
+        //model.addAttribute("patient", patientService.findById(1L));
+        System.out.println(patientId);
+        model.addAttribute("patient", patientService.findById(Long.parseLong(patientId)));
+        return "patient_info";
     }
 }
