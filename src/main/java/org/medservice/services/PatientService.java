@@ -10,6 +10,8 @@ public interface PatientService {
 
     void save(Patient patient);
 
+    void update(Patient patient);
+
     Patient findByLastName(String lastName);
 
     Patient findById(Long id);

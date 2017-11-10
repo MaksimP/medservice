@@ -26,6 +26,10 @@ public class FileImageServiceImpl implements FileImageService{
     }
 
     @Override
+    public void updateFile(MultipartFile file, String filename) {
+    }
+
+    @Override
     public GridFSDBFile getFileName(String reference) {
         return gridFsTemplate.findOne(new Query(Criteria.where("filename").is(reference)));
     }

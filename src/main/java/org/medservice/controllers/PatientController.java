@@ -38,13 +38,28 @@ public class PatientController {
     }
 
     @PostMapping("/add_patient")
-    public String addPatients(@RequestParam(value = "file") MultipartFile file,
+    public String addPatient(@RequestParam(value = "file") MultipartFile file,
                               Patient patient, Principal principal) {
         String fileName = file.getOriginalFilename();
         patient.setDoctorLogin(principal.getName());
         patient.setFileName(fileName);
         fileImageService.saveFile(file, fileName);
         patientService.save(patient);
+        return "redirect:patients_table";
+    }
+
+    @GetMapping("/patient_update/{id}")
+    public String updatePatient(@PathVariable("id") String patientId, Model model) {
+        model.addAttribute("patient", patientService.findById(Long.parseLong(patientId)));
+        return "update_patient";
+    }
+
+    @PostMapping("/patient_update/{id}")
+    public String updatePatient(@RequestParam(value = "file") MultipartFile file,
+                                @PathVariable("id") String patientId, Patient patient) {
+        String fileName = file.getOriginalFilename();
+        fileImageService.saveFile(file, fileName);
+        patientService.update(patient);
         return "redirect:patients_table";
     }
 

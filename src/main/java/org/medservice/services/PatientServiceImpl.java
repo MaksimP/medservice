@@ -28,6 +28,11 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
+    public void update(Patient patient) {
+        patientRepository.save(patient);
+    }
+
+    @Override
     public Patient findByLastName(String lastName) {
         return patientRepository.findPatientByLastName(lastName);
     }

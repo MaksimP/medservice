@@ -9,5 +9,7 @@ public interface FileImageService {
 
     void saveFile(MultipartFile file, String filename);
 
+    void updateFile(MultipartFile file, String filename);
+
     GridFSDBFile getFileName(String reference);
 }
