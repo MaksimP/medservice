@@ -27,10 +27,24 @@ public class FileImageServiceImpl implements FileImageService{
 
     @Override
     public void updateFile(MultipartFile file, String filename) {
+        //gridFsTemplate.delete(new Query(Criteria.where("filename").is(filename)));
+        try {
+            gridFsTemplate.store(file.getInputStream(), filename, file.getContentType());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public GridFSDBFile getFileName(String reference) {
         return gridFsTemplate.findOne(new Query(Criteria.where("filename").is(reference)));
+    }
+
+    public boolean isPresentFile(String fileName) {
+        if (gridFsTemplate.findOne(new Query(Criteria.where("filename").is(fileName))) != null) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

@@ -1,7 +1,8 @@
 <div class="container">
     <div class="row" style="margin-top: 20px">
-        <form class="form-horizontal" enctype="multipart/form-data" action="/add_patient" method="post">
+        <form class="form-horizontal" enctype="multipart/form-data" action="/update_patient" method="post">
             <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden">
+            <input type="hidden" name="id" value="${patient.id}">
             <div class="form-group">
                 <label for="namePatient" class="col-md-2 control-label">Имя пациента</label>
                 <div class="col-md-3">
@@ -25,7 +26,7 @@
             <div class="form-group">
                 <label for="historyPatient" class="col-md-2 control-label">История болезни</label></br>
                 <div align="center">
-                    <textarea name="history" id="inputHistory" rows="14" placeholder="${(patient.history)!}"></textarea>
+                    <textarea name="history" id="inputHistory" rows="14" >${(patient.history)!}</textarea>
                 </div>
             </div>
             <div class="form-group">

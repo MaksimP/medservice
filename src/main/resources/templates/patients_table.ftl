@@ -24,7 +24,7 @@
                             patientId : $(this).children().eq(0).val()
                         }),
                         success : function (ek) {
-                            $(".container-content").replaceWith(ek);
+                            $(".container").replaceWith(ek);
                             history.pushState(newUrl, 'Пациент', newUrl);
                         },
                         error : function (e) {
@@ -43,7 +43,7 @@
                 },
                 callback : function (key, opt) {
                     if ($(this).children().eq(0).text().toString() != "№") {
-                        var newUrl = "/patient_update/" + $(this).children().eq(0).val();
+                        var newUrl = "/update_patient/" + $(this).children().eq(0).val();
                         $.ajax({
                             url : newUrl,
                             data : ({
@@ -51,7 +51,7 @@
                             }),
                             success : function (ek) {
                                 console.log(ek)
-                                $(".container-content").replaceWith(ek);
+                                $(".container").replaceWith(ek);
                                 history.pushState(newUrl, 'Пациент', newUrl);
                             },
                             error : function (e) {
@@ -79,7 +79,7 @@
             <button type="submit" class="btn btn-default">Выйти</button>
         </form>
     </div>
-    <div class="container-content">
+    <div class="container">
         <div class="row">
             <form class="form-inline" style="margin: 10px" role="button" action="/add_patient">
                 <button type="submit" class="btn btn-default">Добавить пациента</button>

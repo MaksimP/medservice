@@ -4,6 +4,8 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.io.File;
+
 @Document(collection = "patients")
 @Data
 public class Patient {
@@ -17,5 +19,5 @@ public class Patient {
     private String fileName;
     private String history;
     private String doctorLogin;
-    private long length;
+   // private File file;
 }
