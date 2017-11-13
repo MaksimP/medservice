@@ -1,6 +1,10 @@
 language: java
 jdk: oraclejdk8
 script: HEROKU_API_KEY="$HEROKU_API_KEY" mvn clean verify -Pheroku
+deploy:
+  provider: heroku
+  api_key:
+    secure: "$HEROKU_API_KEY"
 install:
 - mvn -N io.takari:maven:wrapper
 - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
