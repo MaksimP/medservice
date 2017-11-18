@@ -7,8 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping(value = "/")
 public class MainController {
+
+    @GetMapping("/")
+    public String index() {
+        return "login";
+    }
 
     @GetMapping("/admin")
     public String admin(Model model) {

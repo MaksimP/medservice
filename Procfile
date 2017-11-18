@@ -1,4 +1,4 @@
-web: java -Xmx384m -Xss512k -XX:+UseCompressedOops -Dserver.port=$PORT -jar target/*.jar
+web: java -Xmx384m -Xss512k -XX:+UseCompressedOops -jar target/*.jar
 --spring.profiles.active=prod
 --server.port=$PORT
---spring.data.mongodb.uri=$MONGOLAB_URI
+--spring.data.mongodb.uri=$MONGODB_URI

@@ -17,7 +17,6 @@ import org.springframework.web.servlet.ModelAndView;
 import java.security.Principal;
 
 @Controller
-@RequestMapping(value = "/")
 public class PatientController {
 
     @Autowired
