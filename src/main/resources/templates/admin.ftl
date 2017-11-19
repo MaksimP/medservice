@@ -8,9 +8,11 @@
 </head>
 <body>
     <div class="container-fluid">
-        <form class="navbar-form navbar-right" role="button" action="/logout">
-            <button type="submit" class="btn btn-default">Выйти</button>
-        </form>
+        <div class="row" style="background-color: darkgray">
+            <form class="navbar-form navbar-right" style="margin-right: 20px" role="button" action="/logout">
+                <button type="submit" class="btn btn-default">Выйти</button>
+            </form>
+        </div>
         <div class="container">
             <div class="row">
                 <h2 class="h2 title_admin_panel">Панель администратора</h2>
