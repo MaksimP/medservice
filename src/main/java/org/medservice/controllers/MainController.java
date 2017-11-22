@@ -1,10 +1,13 @@
 package org.medservice.controllers;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.security.Principal;
 
 @Controller
 public class MainController {
@@ -22,7 +25,14 @@ public class MainController {
     @GetMapping("/login")
     public String login(@RequestParam(value = "error", required = false) String error,
                         @RequestParam(value = "logout", required = false) String logout,
-                        Model model) {
+                        Model model, Authentication authentication) {
+        if (authentication != null) {
+            if (authentication.getAuthorities().contains("ADMIN")) {
+                return "redirect:admin";
+            } else {
+                return "redirect:patients_table";
+            }
+        }
         model.addAttribute("error", error != null);
         model.addAttribute("logout", logout != null);
         return "login";

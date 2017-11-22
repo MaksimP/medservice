@@ -12,9 +12,9 @@
         <div class="col-md-4 col-md-offset-3">
             <div class="panel panel-default" style="margin-top: 65px">
                 <div class="panel-body">
-                <#-- <#if logout>
-                     <div class="alert alert-warning" role="alert">..</div>
-                 </#if>-->
+                 <#if logout>
+                     <div class="alert alert-info" role="alert">Вы выйшли с приложения.</div>
+                 </#if>
                 <#if error>
                     <div class="alert alert-danger" role="alert">Неверный логин или пароль</div>
                 </#if>
