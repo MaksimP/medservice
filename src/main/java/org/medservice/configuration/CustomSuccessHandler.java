@@ -1,5 +1,7 @@
 package org.medservice.configuration;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.DefaultRedirectStrategy;
@@ -16,6 +18,9 @@ import java.util.Collection;
 
 @Component
 public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
+
+    public static final Logger logger = LoggerFactory.getLogger("CustomSuccessHandler");
+
     private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
 
     @Override
@@ -26,13 +31,13 @@ public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
                 try {
                     redirectStrategy.sendRedirect(httpServletRequest, httpServletResponse, "/admin");
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    logger.error("Could not redirect to page /admin_table after authentication");
                 }
             } else {
                 try {
                     redirectStrategy.sendRedirect(httpServletRequest, httpServletResponse, "/patients_table");
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    logger.error("Could not redirect to page /patient_table after authentication");
                 }
             }
         });

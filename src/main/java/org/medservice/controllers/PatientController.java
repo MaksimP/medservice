@@ -4,6 +4,8 @@ import com.mongodb.gridfs.GridFSDBFile;
 import org.medservice.models.Patient;
 import org.medservice.services.FileImageServiceImpl;
 import org.medservice.services.PatientServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.MediaType;
@@ -18,6 +20,8 @@ import java.security.Principal;
 
 @Controller
 public class PatientController {
+
+    public static final Logger logger = LoggerFactory.getLogger("PatientController");
 
     @Autowired
     private PatientServiceImpl patientService;
@@ -44,6 +48,8 @@ public class PatientController {
         patient.setFileName(fileName);
         fileImageService.saveFile(file, fileName);
         patientService.save(patient);
+        logger.info("doctor {} added new patient: {} {}", patient.getDoctorLogin(),
+                patient.getName(), patient.getLastName());
         return "redirect:patients_table";
     }
 
@@ -64,6 +70,8 @@ public class PatientController {
             patient.setFileName(patientService.findById(patient.getId()).getFileName());
         }
         patientService.update(patient);
+        logger.info("doctor {} change patient: {} {}", patient.getDoctorLogin(),
+                patient.getName(), patient.getLastName());
         return "redirect:patients_table";
     }
 

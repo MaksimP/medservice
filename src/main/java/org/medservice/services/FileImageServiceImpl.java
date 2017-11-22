@@ -1,6 +1,8 @@
 package org.medservice.services;
 
 import com.mongodb.gridfs.GridFSDBFile;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -13,6 +15,8 @@ import java.io.IOException;
 @Service
 public class FileImageServiceImpl implements FileImageService{
 
+    public static final Logger logger = LoggerFactory.getLogger("FileImageServiceImpl");
+
     @Autowired
     private GridFsTemplate gridFsTemplate;
 
@@ -21,13 +25,12 @@ public class FileImageServiceImpl implements FileImageService{
         try {
             gridFsTemplate.store(file.getInputStream(), fileName, file.getContentType());
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("could not save file");
         }
     }
 
     @Override
     public void updateFile(MultipartFile file, String filename) {
-        //gridFsTemplate.delete(new Query(Criteria.where("filename").is(filename)));
         try {
             gridFsTemplate.store(file.getInputStream(), filename, file.getContentType());
         } catch (IOException e) {
