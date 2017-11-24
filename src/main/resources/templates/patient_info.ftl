@@ -5,20 +5,27 @@
         </form>
     </div>
     <div class="row" style="margin-top: 15px">
-        <p class="text-nowrap"><span class="patient-field">Имя пациента</span> ${(patient.name)!}</p>
+        <p class="text-nowrap">
+            <span class="patient-field col-md-2">Имя пациента</span> ${(patient.name)!}
+        </p>
     </div>
     <div class="row">
-        <p class="text-nowrap"><span class="patient-field">Фамилия пациента</span> ${(patient.lastName)!}</p>
+        <p class="text-nowrap">
+            <span class="patient-field col-md-2">Фамилия пациента</span> ${(patient.lastName)!}
+        </p>
     </div>
     <div class="row">
-        <p class="text-nowrap"><span class="patient-field">Отчество пациента</span> ${(patient.patronymic)!}</p>
+        <p class="text-nowrap">
+            <span class="patient-field col-md-2">Отчество пациента</span> ${(patient.patronymic)!}
+        </p>
     </div>
     <div class="row">
-        <p class="text-nowrap"><span class="patient-field">История болезни</span> <br> ${(patient.history)!}</p>
+        <p class="">
+            <span class="patient-field col-md-2">История болезни</span> <br> ${(patient.history)!}
+        </p>
     </div>
     </br>
-    <img src="/roentgen/${(patient.fileName)!}" alt="" style="width: 100%; margin-top: 15px">
-
+    <a href="/roentgen/${(patient.fileName)!}" data-lightbox="1">
+        <img src="/roentgen/${(patient.fileName)!}" alt="test" style="width: 50%; margin-top: 15px">
+    </a>
 </div>
-
-
