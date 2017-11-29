@@ -96,6 +96,13 @@
 				<configuration>
 					<addResources>true</addResources>
 				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>com.heroku.sdk</groupId>
