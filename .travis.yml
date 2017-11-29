@@ -1,6 +1,5 @@
 language: java
 jdk: oraclejdk8
-script: HEROKU_API_KEY="$HEROKU_API_KEY" mvn clean package
 deploy:
   provider: heroku
   strategy: git

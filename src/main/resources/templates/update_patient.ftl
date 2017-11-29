@@ -4,16 +4,16 @@
             <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden">
             <input type="hidden" name="id" value="${patient.id}">
             <div class="form-group">
-                <label for="namePatient" class="col-md-2 control-label">Имя пациента</label>
-                <div class="col-md-3">
-                    <input type="text" class="form-control" id="namePatient" name="name" value="${(patient.name)!}">
-                </div>
-            </div>
-            <div class="form-group">
                 <label for="lastNamePatient" class="col-md-2 control-label">Фамилия пациента</label>
                 <div class="col-md-3">
                     <input type="text" class="form-control" id="lastNamePatient" name="lastName"
                            value="${(patient.lastName)!}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="namePatient" class="col-md-2 control-label">Имя пациента</label>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" id="namePatient" name="name" value="${(patient.name)!}">
                 </div>
             </div>
             <div class="form-group">
