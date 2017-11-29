@@ -10,5 +10,5 @@ $(function () {
         lightB.hide();
         $('#lightboxOverlay').hide();
         return false;
-    })
+    });
 });

@@ -30,9 +30,16 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="imageRoentgen" class="col-md-2 control-label">Изменить снимок</label>
-                <input type="file" id="imageRoentgen" name="file"/>
-                <img src="/roentgen/${(patient.fileName)!}" alt="" style="width: 100%; margin-top: 15px">
+                <label for="imageRoentgen" class="col-md-2 control-label">Добавить снимок</label>
+                <input type="file" id="imageRoentgen" name="file" accept="image/*" multiple/>
+                <br>
+                <#list (patient.listFileNames)! as file>
+                    <img src="/roentgen/${(file)!}" alt="" style="width:40%; margin-top: 15px" name="image"/>
+                    <br>
+                   <#-- <label for="flagSave${file?index}">Сохранить существующий снимок</label>
+                    <input type="checkbox" id=flagSave[${file?index}] name="flagSave" checked/>-->
+                    <br>
+                </#list>
             </div>
             <div class="form-group">
                 <div class="col-md-offset-1 col-md-10">

@@ -25,7 +25,9 @@
         </p>
     </div>
     </br>
-    <a href="/roentgen/${(patient.fileName)!}" data-lightbox="1">
-        <img src="/roentgen/${(patient.fileName)!}" alt="test" style="width: 50%; margin-top: 15px">
-    </a>
+    <#list (patient.listFileNames)! as file>
+        <a href="/roentgen/${(file)!}" data-lightbox="1">
+            <img src="/roentgen/${(file)!}" alt="test" style="width: 50%; margin-top: 15px">
+        </a>
+    </#list>
 </div>

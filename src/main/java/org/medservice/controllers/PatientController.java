@@ -16,7 +16,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.File;
 import java.security.Principal;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 public class PatientController {
@@ -41,12 +46,16 @@ public class PatientController {
     }
 
     @PostMapping("/add_patient")
-    public String addPatient(@RequestParam(value = "file") MultipartFile file,
-                              Patient patient, Principal principal) {
-        String fileName = file.getOriginalFilename();
+    public String addPatient(@RequestParam(value = "file") MultipartFile[] files,
+                             Patient patient, Principal principal) {
+        ArrayList<String> nameFiles = new ArrayList<>();
         patient.setDoctorLogin(principal.getName());
-        patient.setFileName(fileName);
-        fileImageService.saveFile(file, fileName);
+        Arrays.stream(files).forEach(file -> {
+            String fileName = file.getOriginalFilename();
+            nameFiles.add(fileName);
+            fileImageService.saveFile(file, fileName);
+        });
+        patient.setListFileNames(nameFiles);
         patientService.save(patient);
         logger.info("doctor {} added new patient: {} {}", patient.getDoctorLogin(),
                 patient.getName(), patient.getLastName());
@@ -60,14 +69,19 @@ public class PatientController {
     }
 
     @PostMapping("/update_patient")
-    public String updatePatient(@RequestParam(value = "file") MultipartFile file, Patient patient) {
+    public String updatePatient(@RequestParam(value = "file") MultipartFile file,
+                                @RequestParam(value = "flagSave", required = false) String[] flags,
+                                Patient patient) {
         if (!fileImageService.isPresentFile(file.getOriginalFilename()) && !file.isEmpty()) {
             String fileName = file.getOriginalFilename();
             fileImageService.saveFile(file, fileName);
-            patient.setFileName(fileName);
+            ArrayList<String> listNameFiles = patientService.findById(patient.getId()).getListFileNames();
+            listNameFiles.add(fileName);
+            patient.setListFileNames(listNameFiles);
         }
         if (file.isEmpty()) {
-            patient.setFileName(patientService.findById(patient.getId()).getFileName());
+            ArrayList<String> listNameFiles = patientService.findById(patient.getId()).getListFileNames();
+            patient.setListFileNames(listNameFiles);
         }
         patientService.update(patient);
         logger.info("doctor {} change patient: {} {}", patient.getDoctorLogin(),

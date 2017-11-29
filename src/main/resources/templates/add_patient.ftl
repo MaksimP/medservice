@@ -43,7 +43,7 @@
                 </div>
                 <div class="form-group">
                     <label for="imageRoentgen" class="col-md-2 control-label">Снимок</label>
-                    <input type="file" id="imageRoentgen" name="file"/>
+                    <input type="file" id="imageRoentgen" name="file" accept="image/*" multiple/>
                 </div>
 
                 <div class="form-group">
