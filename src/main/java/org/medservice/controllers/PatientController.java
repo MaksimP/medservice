@@ -69,19 +69,31 @@ public class PatientController {
     }
 
     @PostMapping("/update_patient")
-    public String updatePatient(@RequestParam(value = "file") MultipartFile file,
+    public String updatePatient(@RequestParam(value = "file") MultipartFile[] files,
                                 @RequestParam(value = "flagSave", required = false) String[] flags,
                                 Patient patient) {
-        if (!fileImageService.isPresentFile(file.getOriginalFilename()) && !file.isEmpty()) {
-            String fileName = file.getOriginalFilename();
-            fileImageService.saveFile(file, fileName);
-            ArrayList<String> listNameFiles = patientService.findById(patient.getId()).getListFileNames();
-            listNameFiles.add(fileName);
+        ArrayList<String> listNameFiles = patientService.findById(patient.getId()).getListFileNames();
+        if (flags != null) {
+            Arrays.stream(flags).forEach(i -> {
+                listNameFiles.remove(Integer.parseInt(i));
+            });
+            listNameFiles.trimToSize();
             patient.setListFileNames(listNameFiles);
         }
-        if (file.isEmpty()) {
-            ArrayList<String> listNameFiles = patientService.findById(patient.getId()).getListFileNames();
+
+        if (files == null) {
             patient.setListFileNames(listNameFiles);
+        } else {
+            ArrayList<String> listName = new ArrayList<>();
+            if (listNameFiles != null) {
+                listName.addAll(listNameFiles);
+            }
+            Arrays.stream(files).forEach(file -> {
+                String fileName = file.getOriginalFilename();
+                listName.add(fileName);
+                fileImageService.saveFile(file, fileName);
+            });
+            patient.setListFileNames(listName);
         }
         patientService.update(patient);
         logger.info("doctor {} change patient: {} {}", patient.getDoctorLogin(),

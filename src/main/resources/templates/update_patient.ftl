@@ -33,13 +33,19 @@
                 <label for="imageRoentgen" class="col-md-2 control-label">Добавить снимок</label>
                 <input type="file" id="imageRoentgen" name="file" accept="image/*" multiple/>
                 <br>
+                <div class="update-image">
                 <#list (patient.listFileNames)! as file>
+                    <#assign indexFile = file?index>
                     <img src="/roentgen/${(file)!}" alt="" style="width:40%; margin-top: 15px" name="image"/>
                     <br>
-                   <#-- <label for="flagSave${file?index}">Сохранить существующий снимок</label>
-                    <input type="checkbox" id=flagSave[${file?index}] name="flagSave" checked/>-->
-                    <br>
+                    <label for="flagSave${indexFile}">Удалить существующий снимок</label>
+                    <input type="checkbox" id=flagSave${indexFile} class="checkFlagSave"/>
+                    <br><br>
+                    <#if  indexFile == 0>
+                    <script type="text/javascript" src="js/checkFlagSave.js"></script>
+                    </#if>
                 </#list>
+                </div>
             </div>
             <div class="form-group">
                 <div class="col-md-offset-1 col-md-10">

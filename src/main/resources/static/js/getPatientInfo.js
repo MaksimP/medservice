@@ -34,7 +34,6 @@ $(function () {
                         patientId : $(this).children().eq(0).val()
                     }),
                     success : function (ek) {
-                        console.log(ek)
                         $(".container").replaceWith(ek);
                         history.pushState(newUrl, 'Пациент', newUrl);
                     },

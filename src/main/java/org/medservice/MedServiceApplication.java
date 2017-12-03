@@ -4,6 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.env.SimpleCommandLinePropertySource;
 
+import java.util.Arrays;
+
 @SpringBootApplication
 public class MedServiceApplication {
 
