@@ -35,16 +35,16 @@
             <table class="table table-bordered table-condensed table-patient">
                 <thead>
                 <th>№</th>
-                <th>Имя</th>
                 <th>Фамилия</th>
+                <th>Имя</th>
                 <th>Отчество</th>
                 </thead>
             <#list patients as patient>
                 <tr class="context-menu">
                     <input type="hidden" value="${patient.id}">
                     <td>${patient?index + 1}</td>
-                    <td>${patient.name}</td>
                     <td>${patient.lastName}</td>
+                    <td>${patient.name}</td>
                     <td>${patient.patronymic}</td>
                 </tr>
             </#list>

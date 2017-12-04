@@ -18,15 +18,15 @@
             <form class="form-horizontal" enctype="multipart/form-data" action="/add_patient" method="post">
                 <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden">
                 <div class="form-group">
-                    <label for="namePatient" class="col-md-2 control-label">Имя пациента</label>
-                    <div class="col-md-3">
-                        <input type="text" class="form-control" id="namePatient" name="name">
-                    </div>
-                </div>
-                <div class="form-group">
                     <label for="lastNamePatient" class="col-md-2 control-label">Фамилия пациента</label>
                     <div class="col-md-3">
                         <input type="text" class="form-control" id="lastNamePatient" name="lastName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="namePatient" class="col-md-2 control-label">Имя пациента</label>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="namePatient" name="name">
                     </div>
                 </div>
                 <div class="form-group">
