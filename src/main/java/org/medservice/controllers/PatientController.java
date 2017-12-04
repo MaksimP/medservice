@@ -73,6 +73,7 @@ public class PatientController {
                                 @RequestParam(value = "flagSave", required = false) String[] flags,
                                 Patient patient) {
         ArrayList<String> listNameFiles = patientService.findById(patient.getId()).getListFileNames();
+
         if (flags != null) {
             Arrays.stream(flags).forEach(i -> {
                 listNameFiles.remove(Integer.parseInt(i));

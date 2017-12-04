@@ -42,7 +42,7 @@
                     <input type="checkbox" id=flagSave${indexFile} class="checkFlagSave"/>
                     <br><br>
                     <#if  indexFile == 0>
-                    <script type="text/javascript" src="js/checkFlagSave.js"></script>
+                        <script type="text/javascript" src="js/checkFlagSave.js"></script>
                     </#if>
                 </#list>
                 </div>

@@ -3,9 +3,9 @@ package org.medservice.services;
 
 import org.medservice.models.Patient;
 import org.medservice.repository.PatientRepository;
+import org.medservice.repository.PatientRepositoryCustom;
 import org.medservice.repository.SequenceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,6 +19,9 @@ public class PatientServiceImpl implements PatientService {
     private PatientRepository patientRepository;
 
     @Autowired
+    private PatientRepositoryCustom patientRepositoryCustom;
+
+    @Autowired
     private SequenceRepository sequenceRepository;
 
     @Override
@@ -29,8 +32,8 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public void update(Patient patient) {
-        patientRepository.delete(patient.getId());
         patientRepository.save(patient);
+        patientRepositoryCustom.updateListNameFilesPatient(patient);
     }
 
     @Override
