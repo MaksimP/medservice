@@ -15,6 +15,7 @@
     <script type="text/javascript" src="webjars/lightbox/2.9.0/dist/js/lightbox.min.js"></script>
     <script type="text/javascript" src="js/getPatientInfo.js"></script>
     <script type="text/javascript" src="js/reSizeImage.js"></script>
+    <script type="text/javascript" src="js/autoUpperCaseFirstLetter.js"></script>
 
     <title>Таблица пациентов</title>
 </head>

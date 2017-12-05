@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="webjars/bootstrap/3.0.0/css/bootstrap.min.css" media="screen">
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="webjars/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/autoUpperCaseFirstLetter.js"></script>
     <title>Добавить нового пациента</title>
 </head>
 <body>
