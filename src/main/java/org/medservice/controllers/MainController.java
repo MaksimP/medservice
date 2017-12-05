@@ -14,7 +14,7 @@ public class MainController {
 
     @GetMapping("/")
     public String index() {
-        return "login";
+        return "redirect:login";
     }
 
     @GetMapping("/admin")
@@ -27,7 +27,11 @@ public class MainController {
                         @RequestParam(value = "logout", required = false) String logout,
                         Model model, Authentication authentication) {
         if (authentication != null) {
-            if (authentication.getAuthorities().contains("ADMIN")) {
+            final String[] authority = new String[1];
+            authentication.getAuthorities().stream().forEach(a -> {
+                authority[0] = a.getAuthority();
+            });
+            if (authority[0].equals("ADMIN")) {
                 return "redirect:admin";
             } else {
                 return "redirect:patients_table";
