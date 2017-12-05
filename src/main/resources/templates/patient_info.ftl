@@ -3,6 +3,7 @@
         <form action="/patients_table" class="form-inline">
             <button type="submit" class="btn btn-default">Таблица пациентов</button>
         </form>
+        <br>
     </div>
     <div class="row">
         <p class="text-nowrap">
