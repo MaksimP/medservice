@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="webjars/lightbox/2.9.0/dist/css/lightbox.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="webjars/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="webjars/jquery-ui/1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="webjars/jQuery-contextMenu/2.6.2/dist/jquery.contextMenu.min.js"></script>
     <script type="text/javascript" src="webjars/jQuery-contextMenu/2.6.2/dist/jquery.ui.position.min.js"></script>
     <script type="text/javascript" src="webjars/lightbox/2.9.0/dist/js/lightbox.min.js"></script>
@@ -17,6 +18,7 @@
     <script type="text/javascript" src="js/reSizeImage.js"></script>
     <script type="text/javascript" src="js/autoUpperCaseFirstLetter.js"></script>
     <script type="text/javascript" src="js/checkInputAreEmpty.js"></script>
+    <script type="text/javascript" src="js/movingXRayImage.js"></script>
 
     <title>Таблица пациентов</title>
 </head>

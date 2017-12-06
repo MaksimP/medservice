@@ -6,7 +6,7 @@ $(function () {
 
 $(function () {
     var lightB = $('#lightbox');
-    lightB.find('.lb-outerContainer').on('click', function () {
+    lightB.find('.lb-outerContainer').contextmenu('click', function () {
         lightB.hide();
         $('#lightboxOverlay').hide();
         return false;

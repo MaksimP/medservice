@@ -1,0 +1,3 @@
+$(function () {
+    $('.lb-outerContainer').draggable();
+});
