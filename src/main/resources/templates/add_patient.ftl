@@ -51,7 +51,7 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-1 col-md-10">
-                        <button type="submit" class="btn btn-default disabl ok">Добавить</button>
+                        <button type="submit" class="btn btn-default ok">Добавить</button>
                     </div>
                 </div>
             </form>
