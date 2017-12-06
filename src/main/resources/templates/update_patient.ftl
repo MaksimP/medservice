@@ -51,7 +51,7 @@
                 <div class="col-md-offset-1 col-md-10">
                     <button type="button" class="btn btn-default"
                             onclick="window.history.back(); location.reload();">Отмена</button>
-                    <button type="submit" class="btn btn-default">Изменить</button>
+                    <button type="submit" class="btn btn-default disabled ok">Изменить</button>
                 </div>
             </div>
         </form>

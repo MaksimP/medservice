@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="webjars/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/autoUpperCaseFirstLetter.js"></script>
+    <script type="text/javascript" src="js/checkInputAreEmpty.js"></script>
     <title>Добавить нового пациента</title>
 </head>
 <body>
@@ -50,7 +51,7 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-1 col-md-10">
-                        <button type="submit" class="btn btn-default">Добавить</button>
+                        <button type="submit" class="btn btn-default disabl ok">Добавить</button>
                     </div>
                 </div>
             </form>
