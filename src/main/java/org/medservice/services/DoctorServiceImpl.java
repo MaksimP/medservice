@@ -5,6 +5,7 @@ import org.medservice.repository.DoctorRepository;
 import org.medservice.repository.RoleRepository;
 import org.medservice.repository.SequenceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,8 +26,8 @@ public class DoctorServiceImpl implements DoctorService {
     @Autowired
     private SequenceRepository sequenceRepository;
 
-    /*@Autowired
-    private BCryptPasswordEncoder encoder;*/
+    @Autowired
+    private BCryptPasswordEncoder encoder;
 
     @Override
     public Doctor findDoctorByUserName(String userName) {
@@ -53,7 +54,7 @@ public class DoctorServiceImpl implements DoctorService {
     public void saveDoctor(Doctor doctor) {
         doctor.setRole(role);
         doctor.setId(sequenceRepository.getNextSequenceId(nameCollection));
+        doctor.setPassword(encoder.encode(doctor.getPassword()));
         doctorRepository.save(doctor);
-        //doctor.setPassword(encoder.encode(doctor.getPassword()));
     }
 }
