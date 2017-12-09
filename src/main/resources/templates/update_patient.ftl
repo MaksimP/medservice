@@ -24,7 +24,14 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="historyPatient" class="col-md-2 control-label">История болезни</label></br>
+                <label for="diagnosisPatient" class="col-md-2 control-label">Диагноз</label>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id="diagnosisPatient" name="diagnosis"
+                    value="${(patient.diagnosis)!}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputHistory" class="col-md-2 control-label">История болезни</label></br>
                 <div align="center">
                     <textarea name="history" id="inputHistory" rows="14" >${(patient.history)!}</textarea>
                 </div>

@@ -19,7 +19,9 @@ public class Patient {
     private String lastName;
     private String patronymic;
     private ArrayList<String> listFileNames;
+    private String diagnosis;
     private String history;
     private String doctorLogin;
-    private ArrayList<MultipartFile> files;
+    private byte[] fileXRay;
+    private String contentType;
 }

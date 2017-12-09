@@ -21,11 +21,19 @@
         </p>
     </div>
     <div class="row">
+        <p class="text-nowrap">
+            <span class="patient-field col-md-2">Диагноз</span> ${(patient.diagnosis)!}
+        </p>
+    </div>
+    <div class="row">
         <p class="">
             <span class="patient-field col-md-2">История болезни</span> <br> ${(patient.history)!}
         </p>
     </div>
     </br>
+    <a href="/roentgen/1" data-lightbox="1">
+        <img src="/roentgen/1" alt="" style="width: 50%; margin-top: 15px">
+    </a>
     <#list (patient.listFileNames)! as file>
         <a href="/roentgen/${(file)!}" data-lightbox="1">
             <img src="/roentgen/${(file)!}" alt="" style="width: 50%; margin-top: 15px">
