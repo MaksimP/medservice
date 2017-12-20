@@ -22,6 +22,5 @@ public class Patient {
     private String diagnosis;
     private String history;
     private String doctorLogin;
-    private byte[] fileXRay;
-    private String contentType;
+    private ArrayList<BlobFileXRay> arrayBlobFileXRay;
 }

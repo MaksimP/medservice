@@ -46,7 +46,6 @@ public class PatientServiceImpl implements PatientService {
         return patientRepository.findPatientById(id);
     }
 
-
     @Override
     public List<Patient> findAll() {
         return patientRepository.findAll();

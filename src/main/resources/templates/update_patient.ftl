@@ -37,22 +37,32 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="imageRoentgen" class="col-md-2 control-label">Добавить снимок</label>
-                <input type="file" id="imageRoentgen" name="file" accept="image/*" multiple/>
-                <br>
-                <div class="update-image">
-                <#list (patient.listFileNames)! as file>
-                    <#assign indexFile = file?index>
-                    <img src="/roentgen/${(file)!}" alt="" style="width:40%; margin-top: 15px" name="image"/>
-                    <br>
-                    <label for="flagSave${indexFile}">Удалить существующий снимок</label>
-                    <input type="checkbox" id=flagSave${indexFile} class="checkFlagSave"/>
-                    <br><br>
-                    <#if  indexFile == 0>
-                        <script type="text/javascript" src="js/checkFlagSave.js"></script>
-                    </#if>
-                </#list>
-                </div>
+                <label for="imageRoentgen" class="col-md-3 control-label">Добавить рентген-снимки</label>
+                <input type="file" class="filestyle" id="imageRoentgen" name="file" accept="image/*"  data-input="false"
+                       data-text="Выбрать" multiple/>
+            </div>
+            <div class="update-image">
+            <#list (patient.arrayBlobFileXRay)! as blobXRay>
+                <#assign indexFile = blobXRay?index>
+                <figure>
+                    <img src="/roentgen/${patient.id}/${(blobXRay?index)!}" alt="" style="display: inline-block">
+                <#--<a href="/roentgen/${patient.id}/${(blobXRay?index)!}" id="imageXRayLB${(blobXRay?index)!}" data-lightbox="1">
+                    <img src="/roentgen/${patient.id}/${(blobXRay?index)!}" alt="" style="">
+                </a>-->
+                    <figcaption class="figure-caption">
+                        <p>${(blobXRay.dateXRay)!}</p>
+                        <p>${(blobXRay.descriptionXRay)!}</p>
+                        <label for="flagSave${indexFile}">Удалить существующий снимок</label>
+                        <input type="checkbox" id=flagSave${indexFile} class="checkFlagSave"/>
+                    </figcaption>
+                </figure>
+                <#if  indexFile == 0>
+                    <script type="text/javascript" src="js/checkFlagSave.js"></script>
+                </#if>
+            </#list>
+            </div>
+            <div class="form-group">
+
             </div>
             <div class="form-group">
                 <div class="col-md-offset-1 col-md-10">

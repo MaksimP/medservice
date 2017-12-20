@@ -45,3 +45,37 @@
     font-weight: bold;
     font-size: 16px;
 }
+
+.table-borderless {
+    border: 0;
+}
+
+.row-info div{
+    padding: 16px 8px 0px 8px;
+    line-height: 1.428571429;
+    vertical-align: top;
+}
+
+.row-info div:nth-child(2) {
+    border-bottom: 1px solid gray;
+    font-style: italic;
+    font-size: 110%;
+}
+
+.row-info div:first-child {
+    font: bold 120% Times New Roman;
+}
+
+figure {
+    width: 285px;
+    margin: 25px;
+    display: inline-block;
+}
+
+figure p {
+    font: italic 110% western;
+}
+
+figure img {
+    width: 100%;
+}
