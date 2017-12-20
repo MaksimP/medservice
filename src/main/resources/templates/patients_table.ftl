@@ -46,10 +46,10 @@
         <div class="row">
             <table class="table table-bordered table-condensed table-patient">
                 <thead>
-                <th>№</th>
-                <th>Фамилия</th>
-                <th>Имя</th>
-                <th>Отчество</th>
+                <th class="col-md-1">№</th>
+                <th class="col-md-2">Фамилия</th>
+                <th class="col-md-2">Имя</th>
+                <th class="col-md-2">Отчество</th>
                 <th>Диагноз</th>
                 </thead>
             <#list patients as patient>

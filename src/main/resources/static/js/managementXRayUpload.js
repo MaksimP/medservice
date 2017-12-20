@@ -6,7 +6,7 @@ $(document).on('change', ':file', function () {
             '<span type="text" class="form-control">' + listFiles[i].name + '</span>' +
             '<span class="input-group-addon">' +
             '<i class="glyphicon glyphicon-trash"></i></span></div>' +
-            '<div class="input-group date col-md-3">' +
+            '<div class="input-group date col-md-2">' +
             '<input type="text" class="form-control" name="dateXRay">' +
             '<span class="input-group-addon">' +
             '<i class="glyphicon glyphicon-calendar"></i></span></div>' +

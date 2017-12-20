@@ -33,7 +33,7 @@
             <div class="form-group">
                 <label for="inputHistory" class="col-md-2 control-label">История болезни</label></br>
                 <div align="center">
-                    <textarea name="history" id="inputHistory" rows="14" >${(patient.history)!}</textarea>
+                    <textarea name="history" class="form-control" id="inputHistory" rows="14" >${(patient.history)!}</textarea>
                 </div>
             </div>
             <div class="form-group">
