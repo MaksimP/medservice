@@ -62,13 +62,9 @@
             </#list>
             </div>
             <div class="form-group">
-
-            </div>
-            <div class="form-group">
                 <div class="col-md-offset-1 col-md-10">
-                    <button type="button" class="btn btn-default"
-                            onclick="window.history.back(); location.reload();">Отмена</button>
-                    <button type="submit" class="btn btn-default ok">Изменить</button>
+                    <a href="/patients_table" class="btn btn-primary inline-btn">Отмена</a>
+                    <button type="submit" class="btn btn-primary ok">Изменить</button>
                 </div>
             </div>
         </form>

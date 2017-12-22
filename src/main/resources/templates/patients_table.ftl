@@ -39,9 +39,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <form class="form-inline" style="margin: 10px" role="button" action="/add_patient">
-                <button type="submit" class="btn btn-primary">Добавить пациента</button>
-            </form>
+            <a href="/add_patient" class="btn btn-primary inline-btn">Добавить пациента</a>
         </div>
         <div class="row">
             <table class="table table-bordered table-condensed table-patient">

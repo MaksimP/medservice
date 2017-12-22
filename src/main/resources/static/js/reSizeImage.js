@@ -12,3 +12,7 @@ $(function () {
         return false;
     });
 });
+
+$(function () {
+   $('.lb-nav').remove();
+});

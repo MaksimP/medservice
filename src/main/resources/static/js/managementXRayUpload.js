@@ -2,7 +2,7 @@ $(document).on('change', ':file', function () {
     var listFiles = this.files;
     for (var i = 0; i < listFiles.length; i++) {
         var newDiv = '<div class = "row col-md-offset-1">' +
-            '<div class="input-group col-md-3">' +
+            '<div class="input-group col-md-2">' +
             '<span type="text" class="form-control">' + listFiles[i].name + '</span>' +
             '<span class="input-group-addon">' +
             '<i class="glyphicon glyphicon-trash"></i></span></div>' +

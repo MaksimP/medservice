@@ -79,3 +79,9 @@ figure p {
 figure img {
     width: 100%;
 }
+
+.inline-btn {
+    vertical-align: middle;
+    display: inline-block;
+    margin: 10px;
+}

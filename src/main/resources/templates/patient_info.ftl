@@ -1,11 +1,7 @@
 <div class="container" style="margin-top: 20px">
     <div class="row">
-        <form action="/patients_table" class="form-inline col-md-2">
-            <button type="submit" class="btn btn-primary">Таблица пациентов</button>
-        </form>
-        <form action="/update_patient/${(patient.id)!}" class="form-inline">
-            <button type="submit" class="btn btn-primary">Редактировать пациента</button>
-        </form>
+            <a href="/patients_table" class="btn btn-primary inline-btn">Таблица пациентов</a>
+            <a href="/update_patient/${(patient.id)!}" class="btn btn-primary inline-btn">Редактировать пациента</a>
         <br>
     </div>
     <div class="container-info">
