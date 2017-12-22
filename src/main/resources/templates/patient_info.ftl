@@ -1,7 +1,7 @@
 <div class="container" style="margin-top: 20px">
     <div class="row">
             <a href="/patients_table" class="btn btn-primary inline-btn">Таблица пациентов</a>
-            <a href="/update_patient/${(patient.id)!}" class="btn btn-primary inline-btn">Редактировать пациента</a>
+            <#--<a href="/update_patient/${(patient.id)!}" class="btn btn-primary inline-btn">Редактировать пациента</a>-->
         <br>
     </div>
     <div class="container-info">
