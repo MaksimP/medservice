@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <#import "header.ftl" as head>
@@ -7,13 +7,9 @@
 </head>
 
 <body>
-<div class="container-fluid">
-    <div class="row" style="background-color: darkgray">
-        <form class="navbar-form navbar-right" style="margin-right: 20px" role="button" action="/logout">
-            <button type="submit" class="btn btn-default">Выйти</button>
-        </form>
-    </div>
-    <div class="container">
+    <#import "navbar.ftl" as nav>
+    <@nav.navbar/>
+    <div class="container" style="margin-top:50px">
         <div class="row">
             <a href="/add_patient" class="btn btn-primary inline-btn">Добавить пациента</a>
         </div>
@@ -36,8 +32,8 @@
                     <td>${(patient.name)!}</td>
                     <td>${(patient.patronymic)!}</td>
                     <td>${(patient.diagnosis)!}</td>
-                    <td><a href="/patient_info/${patient.id}" class="btn btn-primary btn-table">Просмотр</a></td>
-                    <td><a href="/update_patient/${patient.id}" class="btn btn-primary btn-table">Редактировать</a></td>
+                    <td><a href="/patient_info/${patient.id}" class="btn btn-default btn-table">Просмотр</a></td>
+                    <td><a href="/update_patient/${patient.id}" class="btn btn-default btn-table">Редактировать</a></td>
                 </tr>
             </#list>
             </table>
@@ -48,7 +44,6 @@
             <li class="context-menu-item" id="update">Изменить данные пациента</li>
         </ul>
     </div>
-</div>
 </body>
 </html>
 
