@@ -85,3 +85,15 @@ figure img {
     display: inline-block;
     margin: 10px;
 }
+
+.btn-table {
+    padding: 1px 5px 1px 5px;
+}
+
+table td:first-child, td:nth-child(7), td:last-child {
+    width: 1%;
+}
+
+table td, th{
+    text-align: center;
+}
