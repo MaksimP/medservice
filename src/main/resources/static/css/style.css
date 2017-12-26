@@ -51,7 +51,7 @@
 }
 
 .row-info div{
-    padding: 16px 8px 0px 8px;
+    padding: 16px 0px 0px 8px;
     line-height: 1.428571429;
     vertical-align: top;
 }
@@ -60,6 +60,8 @@
     border-bottom: 1px solid gray;
     font-style: italic;
     font-size: 110%;
+    height: 38px;
+
 }
 
 .row-info div:first-child {
@@ -86,14 +88,16 @@ figure img {
     margin: 10px;
 }
 
-.btn-table {
-    padding: 1px 5px 1px 5px;
-}
-
 table td:first-child, td:nth-child(7), td:last-child {
     width: 1%;
 }
 
-table td, th{
-    text-align: center;
+.info-underline {
+    text-decoration: underline;
+    white-space: pre-wrap;
+    display: inline-block;
+    padding: 10px 0px 0px 10px;
+    line-height: 2.3;
+    font-style: italic;
+    font-size: 110%;
 }

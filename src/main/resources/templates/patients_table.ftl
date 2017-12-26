@@ -32,8 +32,8 @@
                     <td>${(patient.name)!}</td>
                     <td>${(patient.patronymic)!}</td>
                     <td>${(patient.diagnosis)!}</td>
-                    <td><a href="/patient_info/${patient.id}" class="btn btn-default btn-table">Просмотр</a></td>
-                    <td><a href="/update_patient/${patient.id}" class="btn btn-default btn-table">Редактировать</a></td>
+                    <td><a href="/patient_info/${patient.id}" class="btn btn-primary btn-xs">Просмотр</a></td>
+                    <td><a href="/update_patient/${patient.id}" class="btn btn-primary btn-xs">Редактировать</a></td>
                 </tr>
             </#list>
             </table>

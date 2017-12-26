@@ -30,11 +30,12 @@
             </div>
             <div class="row row-info">
                 <div class="col-md-2">Диагноз пациента</div>
-                <div class="col-md-10" style="max-height: 100%">${(patient.diagnosis)!}</div>
+                <div class="col-md-10">${(patient.diagnosis)!}
+                    <div</div></div>
             </div>
             <div class="row row-info">
                 <div class="col-md-12">История болезни пациента</div>
-                <div class="col-md-12" style="padding-left: 15px">${(patient.history)!}</div>
+                <span class="col-md-12 info-underline">${(patient.history)!}</span>
             </div>
         </div>
         </br>
