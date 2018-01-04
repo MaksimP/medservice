@@ -12,5 +12,7 @@ public interface FileXRayService {
     ArrayList<BlobFileXRay> createListBlob(MultipartFile[] file, String[] dateXRay, String[] descriptionXRay);
 
     ArrayList<BlobFileXRay> updateListBlob(MultipartFile[] file, String[] dateXRay, String[] descriptionXRay,
-                                           String[] flags, ArrayList<BlobFileXRay> blobFileXRays);
+                                           String[] flags, ArrayList<BlobFileXRay> blobFileXRays,
+                                           String[] dateXRayEdit, String[] descriptionXRayedit,
+                                           String[] flagChange);
 }

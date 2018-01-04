@@ -28,6 +28,7 @@
         <script type="text/javascript" src="/js/checkInputAreEmpty.js"></script>
         <script type="text/javascript" src="/js/movingXRayImage.js"></script>
         <script type="text/javascript" src="/js/managementXRayUpload.js"></script>
+        <script type="text/javascript" src="/js/checkFlagSave.js"></script>
     </head>
 </html>
 </#macro>

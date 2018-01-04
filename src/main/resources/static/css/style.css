@@ -101,3 +101,27 @@ table td:first-child, td:nth-child(7), td:last-child {
     font-style: italic;
     font-size: 110%;
 }
+
+.block {
+    display: inline-block;
+    margin: 30px;
+}
+
+.block img {
+    width: 30%;
+    margin-left: 100px;
+    float: left;
+}
+
+.block-edit {
+    margin: 50px 50px 30px;
+}
+
+.block-edit div:first-child {
+    width: 100%;
+}
+
+.date-edit {
+    width: 50%;
+    margin: 40px 40px 70px;
+}

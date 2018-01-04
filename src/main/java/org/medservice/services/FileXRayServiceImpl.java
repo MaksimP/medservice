@@ -32,14 +32,25 @@ public class FileXRayServiceImpl implements FileXRayService{
 
     @Override
     public ArrayList<BlobFileXRay> updateListBlob(MultipartFile[] files, String[] dateXRay, String[] descriptionXRay,
-                                                  String[] flags, ArrayList<BlobFileXRay> blobFileXRayArrayList) {
+                                                  String[] flagsSave, ArrayList<BlobFileXRay> blobFileXRayArrayList,
+                                                  String[] dateXRayEdit, String[] descriptionXRayEdit,
+                                                  String[] flagChange) {
 
         if (blobFileXRayArrayList == null && !files[0].isEmpty()) {
             blobFileXRayArrayList = createListBlob(files, dateXRay, descriptionXRay);
         } else {
-            if (flags != null) {
-                for (int i = 0; i < flags.length; i++) {
-                    blobFileXRayArrayList.remove(Integer.parseInt(flags[i]));
+            if (flagChange != null) {
+                for (int i = 0; i < flagChange.length; i++) {
+                    int index = Integer.parseInt(flagChange[i]);
+                    BlobFileXRay blobFileXRay = blobFileXRayArrayList.get(index);
+                    blobFileXRay.setDescriptionXRay(descriptionXRayEdit[i]);
+                    blobFileXRay.setDateXRay(dateXRayEdit[i]);
+                    blobFileXRayArrayList.set(index, blobFileXRay);
+                }
+            }
+            if (flagsSave != null) {
+                for (int i = 0; i < flagsSave.length; i++) {
+                    blobFileXRayArrayList.remove(Integer.parseInt(flagsSave[i]));
                 }
                 blobFileXRayArrayList.trimToSize();
             }

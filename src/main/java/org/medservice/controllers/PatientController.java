@@ -80,11 +80,14 @@ public class PatientController {
     public String updatePatient(@RequestParam(value = "file") MultipartFile[] files,
                                 @RequestParam(value = "dateXRay", required = false) String[] dateXRay,
                                 @RequestParam(value = "descriptionXRay", required = false)String[] descriptionXRay,
-                                @RequestParam(value = "flagSave", required = false) String[] flags,
+                                @RequestParam(value = "flagSave", required = false) String[] flagsSave,
+                                @RequestParam(value = "flagChange", required = false) String[] flagsChange,
+                                @RequestParam(value = "dateXRayEdit", required = false) String[] dateXRayEdit,
+                                @RequestParam(value = "descriptionXRayEdit", required = false) String[] descriptionXRayEdit,
                                 Patient patient) {
         ArrayList<BlobFileXRay> blobFileXRayArrayList = patientService.findById(patient.getId()).getArrayBlobFileXRay();        ;
-        patient.setArrayBlobFileXRay(fileXRayService.updateListBlob(files, dateXRay, descriptionXRay, flags,
-                blobFileXRayArrayList));
+        patient.setArrayBlobFileXRay(fileXRayService.updateListBlob(files, dateXRay, descriptionXRay, flagsSave,
+                blobFileXRayArrayList, dateXRayEdit, descriptionXRayEdit, flagsChange));
         patientService.update(patient);
         logger.info("doctor {} change patient: {} {}", patient.getDoctorLogin(),
                 patient.getName(), patient.getLastName());

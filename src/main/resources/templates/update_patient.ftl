@@ -55,18 +55,27 @@
                 <div class="update-image">
                 <#list (patient.arrayBlobFileXRay)! as blobXRay>
                     <#assign indexFile = blobXRay?index>
-                    <figure>
-                        <img src="/roentgen/${patient.id}/${(blobXRay?index)!}" alt="" style="display: inline-block">
-                    <#--<a href="/roentgen/${patient.id}/${(blobXRay?index)!}" id="imageXRayLB${(blobXRay?index)!}" data-lightbox="1">
-                        <img src="/roentgen/${patient.id}/${(blobXRay?index)!}" alt="" style="">
-                    </a>-->
-                        <figcaption class="figure-caption">
-                            <p>${(blobXRay.dateXRay)!}</p>
-                            <p>${(blobXRay.descriptionXRay)!}</p>
-                            <label for="flagSave${indexFile}">Удалить существующий снимок</label>
-                            <input type="checkbox" id=flagSave${indexFile} class="checkFlagSave"/>
-                        </figcaption>
-                    </figure>
+                    <div class="block">
+                        <img src="/roentgen/${patient.id}/${(blobXRay?index)!}" alt="">
+                        <div id="edit${indexFile}" class="block-edit col-md-4">
+                            <div class="description-edit">
+                                <input type="text" class="form-control" name="descriptionXRayEdit"
+                                       value="${(blobXRay.descriptionXRay)!}">
+                            </div>
+
+                            <div class="input-group date date-edit">
+                                <input type="text" class="form-control" name="dateXRayEdit" value="${(blobXRay.dateXRay)!}">
+                                <span class="input-group-addon">
+                                    <i class="glyphicon glyphicon-calendar"></i>
+                                </span>
+                            </div>
+
+                            <div style="text-align: center">
+                                <label for="flagSave${indexFile}">Удалить существующий снимок</label>
+                                <input type="checkbox" id=flagSave${indexFile} class="checkFlagSave"/>
+                            </div>
+                        </div>
+                    </div>
                     <#if  indexFile == 0>
                         <script type="text/javascript" src="js/checkFlagSave.js"></script>
                     </#if>
