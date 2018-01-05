@@ -71,9 +71,17 @@ public class PatientController {
     }
 
     @GetMapping("/update_patient/{id}")
-    public String updatePatient(@PathVariable("id") String patientId, Model model) {
-        model.addAttribute("patient", patientService.findById(Long.parseLong(patientId)));
-        return "update_patient";
+    public String updatePatient(@PathVariable("id") String patientId, Model model, Principal principal) {
+        long id = Long.parseLong(patientId);
+        Patient patient = patientService.findById(id);
+        String currentUser = principal.getName();
+        if (currentUser.equals(patient.getDoctorLogin())
+                || currentUser.equals("admin")) {
+            model.addAttribute("patient", patient);
+            return "update_patient";
+        } else {
+            return "403";
+        }
     }
 
     @PostMapping("/update_patient")
@@ -84,10 +92,11 @@ public class PatientController {
                                 @RequestParam(value = "flagChange", required = false) String[] flagsChange,
                                 @RequestParam(value = "dateXRayEdit", required = false) String[] dateXRayEdit,
                                 @RequestParam(value = "descriptionXRayEdit", required = false) String[] descriptionXRayEdit,
-                                Patient patient) {
+                                Patient patient, Principal principal) {
         ArrayList<BlobFileXRay> blobFileXRayArrayList = patientService.findById(patient.getId()).getArrayBlobFileXRay();        ;
         patient.setArrayBlobFileXRay(fileXRayService.updateListBlob(files, dateXRay, descriptionXRay, flagsSave,
                 blobFileXRayArrayList, dateXRayEdit, descriptionXRayEdit, flagsChange));
+        patient.setDoctorLogin(principal.getName());
         patientService.update(patient);
         logger.info("doctor {} change patient: {} {}", patient.getDoctorLogin(),
                 patient.getName(), patient.getLastName());
