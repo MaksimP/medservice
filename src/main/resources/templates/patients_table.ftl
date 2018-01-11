@@ -14,15 +14,14 @@
             <a href="/add_patient" class="btn btn-primary inline-btn">Добавить пациента</a>
         </div>
         <div class="row">
-            <table class="table table-bordered table-condensed table-patient">
-                <thead>
+            <table class="table table-condensed table-patient">
+                <thead style="background-color: gainsboro">
                 <th>№</th>
                 <th>Фамилия</th>
                 <th>Имя</th>
                 <th>Отчество</th>
                 <th class="col-md-5">Диагноз</th>
-                <th>Просмотр</th>
-                <th>Редактировать</th>
+                <th>Действия</th>
                 </thead>
             <#list patients as patient>
                 <tr class="context-menu">
@@ -32,8 +31,9 @@
                     <td>${(patient.name)!}</td>
                     <td>${(patient.patronymic)!}</td>
                     <td>${(patient.diagnosis)!}</td>
-                    <td><a href="/patient_info/${patient.id}" class="btn btn-primary btn-xs">Просмотр</a></td>
-                    <td><a href="/update_patient/${patient.id}" class="btn btn-primary btn-xs">Редактировать</a></td>
+                    <td><a href="/patient_info/${patient.id}" class="btn btn-primary btn-xs">Просмотр</a>
+                        <a href="/update_patient/${patient.id}" class="btn btn-primary btn-xs">Редактировать</a>
+                    </td>
                 </tr>
             </#list>
             </table>

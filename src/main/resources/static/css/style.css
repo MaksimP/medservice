@@ -88,8 +88,10 @@ figure img {
     margin: 10px;
 }
 
-table td:first-child, td:nth-child(7), td:last-child {
+table td:first-child, td:last-child{
     width: 1%;
+    text-align: right;
+    white-space: nowrap;
 }
 
 .info-underline {
@@ -123,5 +125,5 @@ table td:first-child, td:nth-child(7), td:last-child {
 
 .date-edit {
     width: 50%;
-    margin: 40px 40px 70px;
+    margin: 40px 40px 40px 75px;
 }
