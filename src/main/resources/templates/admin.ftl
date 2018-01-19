@@ -9,7 +9,7 @@
 <body>
     <#import "navbar.ftl" as nav>
     <@nav.navbar/>
-    <div class="container"  style="margin-top:50px">
+    <div class="container container-margin">
         <div class="row">
             <h2 class="h2 title_admin_panel">Панель администратора</h2>
         </div>

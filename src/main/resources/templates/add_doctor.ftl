@@ -8,7 +8,7 @@
 <body>
     <#import "navbar.ftl" as nav>
     <@nav.navbar/>
-    <div class="container" style="margin-top:50px">
+    <div class="container container-margin">
         <div class="row" style="margin-top: 20px">
             <form class="form-horizontal" action="/add_doctor" method="post">
                 <input name="${_csrf.parameterName}" value="${_csrf.token}" type="hidden">
