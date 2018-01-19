@@ -50,4 +50,12 @@ public class PatientServiceImpl implements PatientService {
     public List<Patient> findAll() {
         return patientRepository.findAll();
     }
+
+    @Override
+    public List<Patient> findByLastNameAll(String lastName) {
+        return patientRepository.findAllByLastName(lastName);
+        //return patientRepository.findAll();
+    }
+
+
 }

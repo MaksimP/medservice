@@ -45,6 +45,17 @@ public class PatientController {
         return "patients_table";
     }
 
+    @GetMapping("/patients/last_names")
+    public String getPatientsLastNames(@RequestParam(value = "search-lastname", required = false) String lastName,
+                                       Model model) {
+        if (lastName.isEmpty()) {
+            model.addAttribute("patients", patientService.findAll());
+        } else {
+            model.addAttribute("patients", patientService.findByLastNameAll(lastName));
+        }
+        return "patients_table";
+    }
+
     @GetMapping("/add_patient")
     public String addPatient() {
         return "add_patient";

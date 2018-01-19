@@ -11,7 +11,15 @@
     <@nav.navbar/>
     <div class="container" style="margin-top:50px">
         <div class="row">
-            <a href="/add_patient" class="btn btn-primary inline-btn">Добавить пациента</a>
+            <a href="/add_patient" class="btn btn-primary inline-btn" style="float: left">Добавить пациента</a>
+            <form action="/patients/last_names" class="form-horizontal search-form">
+                <div class="form-group">
+                    <label for="search-lastname" class="control-label col-md-4">Найти пациентов по фамилии</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="search-lastname" name="search-lastname">
+                    </div>
+                </div>
+            </form>
         </div>
         <div class="row">
             <table class="table table-condensed table-patient">

@@ -127,3 +127,8 @@ table td:first-child, td:last-child{
     width: 50%;
     margin: 40px 40px 40px 75px;
 }
+
+.search-form {
+    width: 60%;
+    margin: 10px;
+}
