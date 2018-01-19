@@ -37,9 +37,6 @@ public class PatientController {
     private PatientServiceImpl patientService;
 
     @Autowired
-    private FileImageServiceImpl fileImageService;
-
-    @Autowired
     private FileXRayServiceImpl fileXRayService;
 
     @GetMapping("/patients_table")
@@ -49,7 +46,7 @@ public class PatientController {
     }
 
     @GetMapping("/add_patient")
-    public String addPatients() {
+    public String addPatient() {
         return "add_patient";
     }
 
