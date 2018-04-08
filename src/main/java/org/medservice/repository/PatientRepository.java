@@ -15,4 +15,6 @@ public interface PatientRepository extends MongoRepository<Patient, Long> {
 
     List<Patient> findAllByLastName(String lastName);
 
+    List<Patient> findDistinctByDiagnosisContains(String diagnosis);
+
 }

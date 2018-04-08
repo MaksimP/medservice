@@ -57,5 +57,10 @@ public class PatientServiceImpl implements PatientService {
         //return patientRepository.findAll();
     }
 
+    @Override
+    public List<Patient> findDistinctByDiagnosis(String diagnosis) {
+        return patientRepository.findDistinctByDiagnosisContains(diagnosis);
+    }
+
 
 }

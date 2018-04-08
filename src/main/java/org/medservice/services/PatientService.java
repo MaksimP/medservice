@@ -19,4 +19,6 @@ public interface PatientService {
     List<Patient> findAll();
 
     List<Patient> findByLastNameAll(String lastName);
+
+    List<Patient> findDistinctByDiagnosis(String diagnosis);
 }

@@ -56,6 +56,17 @@ public class PatientController {
         return "patients_table";
     }
 
+    @GetMapping("/patients/diagnosis")
+    public String getPatientOfDiagnosis(@RequestParam(value = "diagnos", required = false) String diagnosis,
+                                        Model model) {
+        if (diagnosis.isEmpty()) {
+            model.addAttribute("patients", patientService.findAll());
+        } else {
+            model.addAttribute("patients", patientService.findDistinctByDiagnosis(diagnosis));
+        }
+        return "patients_table";
+    }
+
     @GetMapping("/add_patient")
     public String addPatient() {
         return "add_patient";
