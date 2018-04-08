@@ -26,6 +26,7 @@
                     <div class="col-md-4">
                         <input type="text" class="form-control" id="diagnosis" name="diagnos">
                     </div>
+                    <button class="btn btn-primary" name="search" type="submit">Поиск</button>
                 </div>
             </form>
         </div>

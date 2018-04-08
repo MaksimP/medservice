@@ -22,7 +22,7 @@
 
     <#--<script type="text/javascript" src="js/getPatientInfo.js"></script>-->
         <script type="text/javascript" src="/js/reSizeImage.js"></script>
-        <script type="text/javascript" src="/js/autoUpperCaseFirstLetter.js"></script>
+        <#--<script type="text/javascript" src="/js/autoUpperCaseFirstLetter.js"></script>-->
         <script type="text/javascript" src="/js/checkInputAreEmpty.js"></script>
         <script type="text/javascript" src="/js/movingXRayImage.js"></script>
         <script type="text/javascript" src="/js/managementXRayUpload.js"></script>
