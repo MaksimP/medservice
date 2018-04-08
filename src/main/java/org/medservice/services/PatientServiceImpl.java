@@ -54,12 +54,11 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public List<Patient> findByLastNameAll(String lastName) {
         return patientRepository.findAllByLastName(lastName);
-        //return patientRepository.findAll();
     }
 
     @Override
     public List<Patient> findDistinctByDiagnosis(String diagnosis) {
-        return patientRepository.findDistinctByDiagnosisContains(diagnosis);
+        return patientRepository.findByDiagnosisContainingIgnoreCase(diagnosis);
     }
 
 
