@@ -28,7 +28,7 @@
             </tr>
         <#list doctors as doctor>
             <tr>
-                <td>${doctor.id}</td>
+                <td>${patient?index + 1}</td>
                 <td>${doctor.name}</td>
                 <td>${doctor.lastName}</td>
                 <td>${doctor.patronymic}</td>
