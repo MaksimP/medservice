@@ -24,6 +24,7 @@
                 <th>Имя</th>
                 <th>Фамилия</th>
                 <th>Отчество</th>
+                <th>Логин</th>
             </tr>
         <#list doctors as doctor>
             <tr>
@@ -32,7 +33,6 @@
                 <td>${doctor.lastName}</td>
                 <td>${doctor.patronymic}</td>
                 <td>${doctor.userName}</td>
-                <td>${doctor.password}</td>
             </tr>
         </#list>
         </table>
