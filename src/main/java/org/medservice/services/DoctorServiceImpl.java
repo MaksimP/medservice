@@ -44,12 +44,6 @@ public class DoctorServiceImpl implements DoctorService {
         return doctorRepository.findAll();
     }
 
-    /*public List<Doctor> findAllDoctor() {
-        return doctorRepository.findAll(Example<Doctor)
-    }*/
-
-
-
     @Override
     public void saveDoctor(Doctor doctor) {
         doctor.setRole(role);
