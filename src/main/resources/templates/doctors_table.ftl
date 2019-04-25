@@ -33,6 +33,10 @@
                 <td>${doctor.lastName}</td>
                 <td>${doctor.patronymic}</td>
                 <td>${doctor.userName}</td>
+<<<<<<< HEAD
+=======
+                <td>${doctor.password}</td>
+>>>>>>> bcc4d3b... add new field in the table of doctors
             </tr>
         </#list>
         </table>
