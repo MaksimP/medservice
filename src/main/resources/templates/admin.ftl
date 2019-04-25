@@ -19,7 +19,7 @@
                     <div class="change_data_doctor">
                         <h3 class="h3">Редактирование базы пользователей</h3>
                         <a class="href_admin" href="/add_doctor">Добавить пользователя</a></br>
-                        <a class="href_admin" href="/doctors_table">Редактировать существующего</a><br>
+                        <#--<a class="href_admin" href="/doctors_table">Редактировать существующего</a><br>-->
                         <a class="href_admin" href="/doctors_table">Посмотреть весь список</a></br><br>
                         <a class="href_admin" href="/patients_table">Редактирование базы пациентов</a>
                     </div>
