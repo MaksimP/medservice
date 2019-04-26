@@ -34,9 +34,12 @@
                 <td>${doctor.patronymic}</td>
                 <td>${doctor.userName}</td>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 <td>${doctor.password}</td>
 >>>>>>> bcc4d3b... add new field in the table of doctors
+=======
+>>>>>>> f8aae4e... change field in the table doctors
             </tr>
         </#list>
         </table>
