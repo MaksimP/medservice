@@ -2,7 +2,6 @@ package org.medservice.services;
 
 import org.medservice.models.Doctor;
 import org.medservice.repository.DoctorRepository;
-import org.medservice.repository.RoleRepository;
 import org.medservice.repository.SequenceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -19,9 +18,6 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Autowired
     private DoctorRepository doctorRepository;
-
-    @Autowired
-    private RoleRepository roleRepository;
 
     @Autowired
     private SequenceRepository sequenceRepository;
