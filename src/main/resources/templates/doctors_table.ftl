@@ -31,6 +31,8 @@
                 <td>${doctor.name}</td>
                 <td>${doctor.lastName}</td>
                 <td>${doctor.patronymic}</td>
+                <td>${doctor.userName}</td>
+                <td>${doctor.password}</td>
             </tr>
         </#list>
         </table>
